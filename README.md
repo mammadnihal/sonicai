@@ -1,16 +1,53 @@
-# sonicai
+sonicAI - Flutter AI Chat App
+Bu, Flutter ilə qurulmuş, istifadəçi dostu interfeysə malik güclü bir süni intellekt söhbət tətbiqidir. Tətbiq söhbət seanslarını yadda saxlamaq üçün yerli yaddaşdan istifadə edir və Azure OpenAI xidmətləri ilə inteqrasiya olunmuşdur.
 
-A new Flutter project.
+Xüsusiyyətləri
+Müasir UI/UX Dizaynı: Şık və intuitiv istifadəçi interfeysi.
 
-## Getting Started
+Yan Menyu: Yeni söhbət yaratmaq və keçmiş söhbətlərə asanlıqla daxil olmaq üçün yan menyu.
 
-This project is a starting point for a Flutter application.
+Canlı Yazma Animasiyası: İstifadəçi təcrübəsini artırmaq üçün AI cavabları üçün yazma animasiyası.
 
-A few resources to get you started if this is your first Flutter project:
+Söhbət Seanslarının İdarə Edilməsi: Söhbət tarixçəsini saxlamaq üçün seansların avtomatik idarə edilməsi.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+Provider Paketindən İstifadə: Tətbiqin vəziyyətini idarə etmək üçün Provider state management paketi ilə effektiv işləmə.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Yerli Yaddaş: Söhbətləri cihazda saxlamaq üçün shared_preferences istifadəsi.
+
+Tətbiqin Vizual Təqdimatı
+Başlamaq üçün
+Bu layihəni yerli olaraq işlətmək üçün aşağıdakı addımları izləyin.
+
+Önşərtlər
+Flutter SDK
+
+Android Studio və ya VS Code
+
+Azure OpenAI xidmətlərinə giriş və bir API açarı.
+
+Quraşdırma
+Layihəni klonlayın:
+
+git clone https://github.com/Sizin-Github-Adınız/sizin-repo-adınız.git
+cd sizin-repo-adınız
+
+Lazımi paketləri quraşdırın:
+
+flutter pub get
+
+lib/main.dart faylını açın və Azure API konfiqurasiyalarınızı dəyişdirin:
+
+// Provider sinifi
+class ChatProvider with ChangeNotifier {
+    ...
+    final String _azureEndpoint = "SİZİN AZURE ENDPOINTUNUZ";
+    final String _azureApiKey = "SİZİN AZURE API AÇARINIZ";
+    ...
+}
+
+Tətbiqi işə salın:
+
+flutter run
+
+Əlaqə
+Bu layihə haqqında hər hansı bir sualınız və ya təklifiniz varsa, sizin@emailiniz.com ünvanına e-poçt göndərə bilərsiniz.

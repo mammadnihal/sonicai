@@ -23,9 +23,8 @@ class ChatProvider with ChangeNotifier {
   bool get isTyping => _isTyping;
   String get typedText => _typedText;
 
-  final String _azureEndpoint = "https://biruaai.openai.azure.com/";
-  final String _azureApiKey =
-      "BoRSBPgwjPZlQyZ5aUmv1izmy1ye0t3oocB6rXIcUWo9rs6RwkBDJQQJ99BCACYeBjFXJ3w3AAABACOGZcZ9";
+  final String _azureEndpoint = "######";
+  final String _azureApiKey = "######";
   final String _deploymentName = "gpt-4o";
   final String _apiVersion = "2025-01-01-preview";
 
