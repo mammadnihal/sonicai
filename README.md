@@ -68,4 +68,4 @@ flutter run
 ## Əlaqə
 
 Bu layihə haqqında hər hansı bir sualınız və ya təklifiniz varsa,
-sizin@emailiniz.com ünvanına e-poçt göndərə bilərsiniz.
+nihalmammad@gmail.com ünvanına e-poçt göndərə bilərsiniz.
