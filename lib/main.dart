@@ -1,21 +1,12 @@
 import 'package:flutter/material.dart';
-import 'dart:convert';
-import 'dart:async';
-import 'package:http/http.dart' as http;
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:provider/provider.dart';
 import 'package:sonicai/app/provaider/chat_provaider.dart';
 import 'package:sonicai/view/main_chat_screen.dart';
 
-// Provider sinifi
-
-
-
-
 void main() {
   runApp(
     ChangeNotifierProvider(
-      create: (context) => ChatProvider(),
+      create: (context) => ChatProvider(context),
       child: const MyApp(),
     ),
   );
@@ -27,7 +18,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Azure AI Söhbət',
+      title: 'Azure AI Chat',
       theme: ThemeData(
         scaffoldBackgroundColor: const Color(0xFFF0EFEA),
         primarySwatch: Colors.blue,

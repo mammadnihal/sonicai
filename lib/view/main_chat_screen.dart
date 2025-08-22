@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sonicai/app/class/chat_message_class.dart';
@@ -60,6 +59,7 @@ class _MainChatScreenState extends State<MainChatScreen> {
             borderRadius: BorderRadius.circular(20),
             boxShadow: [
               BoxShadow(
+                // ignore: deprecated_member_use
                 color: Colors.black.withOpacity(0.05),
                 blurRadius: 10,
                 offset: const Offset(0, 5),
@@ -132,7 +132,7 @@ class _MainChatScreenState extends State<MainChatScreen> {
                   child: const Icon(Icons.add, color: Colors.white),
                 ),
                 title: const Text(
-                  'Yeni söhbət',
+                  'New Chat',
                   style: TextStyle(
                     color: Colors.white,
                     fontWeight: FontWeight.bold,
@@ -140,7 +140,7 @@ class _MainChatScreenState extends State<MainChatScreen> {
                   ),
                 ),
                 onTap: () {
-                  chatProvider.createNewChat();
+                  chatProvider.createNewChat(context);
                   Navigator.pop(context);
                 },
               ),
@@ -150,7 +150,7 @@ class _MainChatScreenState extends State<MainChatScreen> {
                   color: Colors.white54,
                 ),
                 title: const Text(
-                  'Söhbətlər',
+                  'Chats',
                   style: TextStyle(color: Colors.white54, fontSize: 14),
                 ),
                 onTap: () {},
@@ -158,7 +158,7 @@ class _MainChatScreenState extends State<MainChatScreen> {
               ListTile(
                 leading: const Icon(Icons.folder_open, color: Colors.white54),
                 title: const Text(
-                  'Layihələr',
+                  'Projects',
                   style: TextStyle(color: Colors.white54, fontSize: 14),
                 ),
                 onTap: () {},
@@ -175,7 +175,7 @@ class _MainChatScreenState extends State<MainChatScreen> {
                           vertical: 8.0,
                         ),
                         child: Text(
-                          'Bu Gün',
+                          'Today',
                           style: TextStyle(
                             color: Colors.white54,
                             fontWeight: FontWeight.bold,
@@ -190,7 +190,7 @@ class _MainChatScreenState extends State<MainChatScreen> {
                           vertical: 8.0,
                         ),
                         child: Text(
-                          'Dünən',
+                          'Yesterday',
                           style: TextStyle(
                             color: Colors.white54,
                             fontWeight: FontWeight.bold,
@@ -205,7 +205,7 @@ class _MainChatScreenState extends State<MainChatScreen> {
                           vertical: 8.0,
                         ),
                         child: Text(
-                          'Son 7 Gün',
+                          'Last 7 Days',
                           style: TextStyle(
                             color: Colors.white54,
                             fontWeight: FontWeight.bold,
@@ -237,16 +237,26 @@ class _MainChatScreenState extends State<MainChatScreen> {
       ),
       body: Column(
         children: [
-          Expanded(
-            child: ListView.builder(
-              controller: _scrollController,
-              padding: const EdgeInsets.only(top: 15.0),
-              itemCount: displayedMessages.length,
-              itemBuilder: (context, index) {
-                return _buildMessage(displayedMessages[index]);
-              },
-            ),
-          ),
+          displayedMessages.isEmpty
+              ? Expanded(
+                child: Center(
+                    child: Image.asset(
+                      'assets/sonicai.gif',
+                      width: 250,
+                      height: 250,
+                    ),
+                  ),
+              )
+              : Expanded(
+                  child: ListView.builder(
+                    controller: _scrollController,
+                    padding: const EdgeInsets.only(top: 15.0),
+                    itemCount: displayedMessages.length,
+                    itemBuilder: (context, index) {
+                      return _buildMessage(displayedMessages[index]);
+                    },
+                  ),
+                ),
           if (chatProvider.isLoading || chatProvider.isTyping)
             const Padding(
               padding: EdgeInsets.symmetric(vertical: 10.0),
@@ -258,6 +268,7 @@ class _MainChatScreenState extends State<MainChatScreen> {
               color: const Color(0xFFF0EFEA),
               boxShadow: [
                 BoxShadow(
+                  // ignore: deprecated_member_use
                   color: Colors.black.withOpacity(0.05),
                   spreadRadius: 1,
                   blurRadius: 5,
@@ -272,7 +283,7 @@ class _MainChatScreenState extends State<MainChatScreen> {
                     controller: _textController,
                     style: const TextStyle(color: Colors.black, fontSize: 14),
                     decoration: InputDecoration(
-                      hintText: "Bir şey soruş...",
+                      hintText: "Ask something...",
                       hintStyle: const TextStyle(
                         color: Colors.black54,
                         fontSize: 14,
@@ -289,7 +300,7 @@ class _MainChatScreenState extends State<MainChatScreen> {
                       ),
                     ),
                     onSubmitted: (text) {
-                      chatProvider.sendMessage(text);
+                      chatProvider.sendMessage(context, text);
                       _textController.clear();
                     },
                   ),
@@ -305,7 +316,7 @@ class _MainChatScreenState extends State<MainChatScreen> {
                   child: IconButton(
                     icon: const Icon(Icons.arrow_upward, color: Colors.white),
                     onPressed: () {
-                      chatProvider.sendMessage(_textController.text);
+                      chatProvider.sendMessage(context, _textController.text);
                       _textController.clear();
                     },
                   ),

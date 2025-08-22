@@ -1,71 +1,70 @@
-# sonicAI - Flutter AI Chat App
+sonicAI - Flutter AI Chat App
+![Chat Screen](https://raw.githubusercontent.com/mammadnihal/sonicai/refs/heads/main/assets/chat_screen.png)
+![Draüler Menu](https://raw.githubusercontent.com/mammadnihal/sonicai/refs/heads/main/assets/drawler.png)
 
-Bu, Flutter ilə qurulmuş, istifadəçi dostu interfeysə malik güclü bir
-süni intellekt söhbət tətbiqidir. Tətbiq söhbət seanslarını yadda
-saxlamaq üçün yerli yaddaşdan istifadə edir və Azure OpenAI xidmətləri
-ilə inteqrasiya olunmuşdur.
+This is a powerful AI chat application built with Flutter, featuring a user-friendly interface. The app uses local storage to save chat sessions and integrates with Azure OpenAI services.
 
-## Xüsusiyyətləri
+Features
 
--   **Müasir UI/UX Dizaynı:** Şık və intuitiv istifadəçi interfeysi.
--   **Yan Menyu:** Yeni söhbət yaratmaq və keçmiş söhbətlərə asanlıqla
-    daxil olmaq üçün yan menyu.
--   **Canlı Yazma Animasiyası:** İstifadəçi təcrübəsini artırmaq üçün AI
-    cavabları üçün yazma animasiyası.
--   **Söhbət Seanslarının İdarə Edilməsi:** Söhbət tarixçəsini saxlamaq
-    üçün seansların avtomatik idarə edilməsi.
--   **Provider Paketindən İstifadə:** Tətbiqin vəziyyətini idarə etmək
-    üçün Provider state management paketi ilə effektiv işləmə.
--   **Yerli Yaddaş:** Söhbətləri cihazda saxlamaq üçün
-    shared_preferences istifadəsi.
+Modern UI/UX Design: Sleek and intuitive user interface.
 
-## Tətbiqin Vizual Təqdimatı
+Side Menu: Easily create new chats and access previous conversations.
 
-## Başlamaq üçün
+Live Typing Animation: Shows AI typing animation to enhance user experience.
 
-Bu layihəni yerli olaraq işlətmək üçün aşağıdakı addımları izləyin.
+Chat Session Management: Automatically manages chat sessions to save conversation history.
 
-### Önşərtlər
+Provider Package Usage: Efficient state management using the Provider package.
 
--   Flutter SDK
--   Android Studio və ya VS Code
--   Azure OpenAI xidmətlərinə giriş və bir API açarı.
+Local Storage: Saves chats on the device using shared_preferences.
 
-### Quraşdırma
+Visual Preview
 
-Layihəni klonlayın:
+(Insert screenshots or GIFs of the app here)
 
-``` bash
-git clone https://github.com/Sizin-Github-Adınız/sizin-repo-adınız.git
-cd sizin-repo-adınız
+Getting Started
+
+Follow these steps to run the project locally.
+
+Prerequisites
+
+Flutter SDK
+
+Android Studio or VS Code
+
+Access to Azure OpenAI services and an API key
+
+Installation
+
+Clone the repository:
+
+```yaml
+git clone https://github.com/mammadnihal/sonicai.git
+cd sonicai
 ```
 
-Lazımi paketləri quraşdırın:
-
-``` bash
+Install the required packages:
+```yaml
 flutter pub get
 ```
 
-`lib/main.dart` faylını açın və Azure API konfiqurasiyalarınızı
-dəyişdirin:
+Open lib/main.dart and configure your Azure API settings:
 
-``` dart
-// Provider sinifi
+```dart
+// Provider class
 class ChatProvider with ChangeNotifier {
     ...
-    final String _azureEndpoint = "SİZİN AZURE ENDPOINTUNUZ";
-    final String _azureApiKey = "SİZİN AZURE API AÇARINIZ";
+    final String _azureEndpoint = "YOUR AZURE ENDPOINT";
+    final String _azureApiKey = "YOUR AZURE API KEY";
     ...
 }
 ```
 
-Tətbiqi işə salın:
-
-``` bash
+Run the app:
+```yaml
 flutter run
 ```
 
-## Əlaqə
-
-Bu layihə haqqında hər hansı bir sualınız və ya təklifiniz varsa,
-nihalmammad@gmail.com ünvanına e-poçt göndərə bilərsiniz.
+Contact
+If you have any questions or suggestions about this project, you can email me at:
+nihalmammad@gmail.com
