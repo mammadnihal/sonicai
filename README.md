@@ -1,6 +1,7 @@
-sonicAI - Flutter AI Chat App
-![Chat Screen](https://raw.githubusercontent.com/mammadnihal/sonicai/refs/heads/main/assets/chat_screen.png)
-![Draüler Menu](https://raw.githubusercontent.com/mammadnihal/sonicai/refs/heads/main/assets/drawler.png)
+<img src="https://raw.githubusercontent.com/mammadnihal/sonicai/refs/heads/main/assets/sonicai.gif" alt="Chat Screen" width="50"/>
+sonicAI - Flutter AI Chat App </br>
+<img src="https://raw.githubusercontent.com/mammadnihal/sonicai/refs/heads/main/assets/chat_screen.png" alt="Chat Screen" width="300"/>
+<img src="ttps://raw.githubusercontent.com/mammadnihal/sonicai/refs/heads/main/assets/drawler.png" alt="Drawler Menu" width="300"/>
 
 This is a powerful AI chat application built with Flutter, featuring a user-friendly interface. The app uses local storage to save chat sessions and integrates with Azure OpenAI services.
 
