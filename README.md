@@ -69,3 +69,6 @@ flutter run
 Contact
 If you have any questions or suggestions about this project, you can email me at:
 nihalmammad@gmail.com
+
+Regards 
+Nihal Mammad
